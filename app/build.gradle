@@ -20,15 +20,67 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'org.jetbrains:annotations:16.0.2'
+    //Material design support library
+    implementation 'com.google.android.material:material:1.2.0-alpha03'
+    /*RxJava lib*/
+//    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+//    implementation "io.reactivex.rxjava2:rxjava:2.2.9"
+//    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+
+    // retrofit, gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+//    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+//    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+//    implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
+
+
+    /*RxJava lib*/
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation "io.reactivex.rxjava2:rxjava:2.2.9"
+    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+
+
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    // ADd Stomp
+    implementation 'com.github.NaikSoftware:StompProtocolAndroid:1.6.4'
+
+    //Room database
+    def room_version = "2.2.3"
+
+//    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+//    // optional - RxJava support for Room
+//    implementation "androidx.room:room-rxjava2:$room_version"
+
+    // Test helpers
+    testImplementation "androidx.room:room-testing:$room_version"
+
+    //dexter runtime permission
+    implementation('com.karumi:dexter:5.0.0') { exclude group: 'com.android.support' }
+
+    // RxJava
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.5'
+//    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+//    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+//    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
+//    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+
 }
